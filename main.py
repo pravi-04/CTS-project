@@ -10,3 +10,15 @@ word_length = len(chosen_word)
 end_of_game = False
 lives = 6
 
+ if guess in display:
+        print(f"You've already guessed {guess}")
+
+    # Check guessed letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
+
+    # Check if user is wrong.
+    if guess not in chosen_word:
